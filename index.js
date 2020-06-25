@@ -14,7 +14,6 @@ app.post("/query", (req, res) => {
     if (req.headers.authorization !== process.env.SECRET) return res.status(401).json({err: "unauthorized"});
     if (req.body.query.length > 500) return res.json({answer: "This is too long to post"});
     res.json({
-        answer: req.body.query,
         results: [
             {
                 text: "Post this to Alles",
